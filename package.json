@@ -1,7 +1,7 @@
 {
   "name": "template",
   "version": "1.0.0",
-  "description": "plantilla proyecto typescript hexagonal",
+  "description": "plantilla proyecto hexagonal",
   "license": "ISC",
   "author": {
     "name": "Raúl Talledo Bermúdez",
