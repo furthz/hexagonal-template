@@ -1,6 +1,6 @@
 {
   "name": "template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "plantilla proyecto typescript",
   "license": "ISC",
   "author": {
@@ -24,11 +24,13 @@
     "lint": "eslint --ignore-path .gitignore . --ext .js,.ts",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
+    "prepare-release": "run-s reset-hard version",
     "reset-hard": "git clean -dfx && git reset --hard && npm install",
     "start": "node dist/src/main.js",
     "start:dev": "tsnd --inspect=0.0.0.0:9229 --respawn src/main.ts",
     "test": "npm run test:unit",
     "test:unit": "NODE_ENV=test jest --coverage",
+    "update-deps": "npm-check-updates -u",
     "version": "standard-version -t"
   },
   "dependencies": {
