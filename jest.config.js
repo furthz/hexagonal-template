@@ -30,14 +30,14 @@ module.exports = {
 
   /* Bootstrap settings */
   // Set initial config and enable jest-extended features
-  setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts', 'jest-extended/all'],
+  setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts'], //, 'jest-extended/all'],
 
   /* Global test settings */
   // Automatically clear mock calls and instances between every test
   clearMocks: true,
 
   /* Coverage settings */
-  collectCoverage: false,
+  collectCoverage: true,
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
   // An array of glob patterns indicating a set of files for which coverage information should be collected
@@ -48,8 +48,9 @@ module.exports = {
     '<rootDir>/src/index.ts',
     '<rootDir>/src/healthcheck.ts'
   ],
+  testResultsProcessor: 'jest-sonar-reporter'
   // Jest custom reporters
-  reporters: ['default']
+  //reporters: ['default']
   /*
    * Uncomment if you want to set thresholds for code coverage
   coverageThreshold: {

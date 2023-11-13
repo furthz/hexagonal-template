@@ -133,6 +133,7 @@ module.exports = {
         }
       },
       rules: {
+        'no-console': 2,
         // For faster development
         'no-process-exit': 'off',
         'no-useless-constructor': 'off',
@@ -265,5 +266,6 @@ module.exports = {
         }
       ]
     }
-  ]
+  ],
+  ignorePatterns: ['jest.config.js']
 };

@@ -10,6 +10,9 @@ services:
       context: .
       args:
         - PORT=${PORT}
+        - AUTH_TOKEN=${AUTH_TOKEN}
+        - REPOSITORY_URL=${REPOSITORY_URL}
+        - REPOSITORY_URI=${REPOSITORY_URI}
     ports:
       - '${PORT}:${PORT}'
       - '9229:9229'
@@ -18,7 +21,21 @@ services:
     volumes:
       - .:/usr/app
       - node_modules:/usr/app/node_modules/
-        node_modules:/project/node_modules/
-
+  my-service-sonar:
+    container_name: service_sonar
+    env_file: .env
+    build:
+      target: test
+      context: .
+      args:
+        - PORT=${PORT}
+        - AUTH_TOKEN=${AUTH_TOKEN}
+        - REPOSITORY_URL=${REPOSITORY_URL}
+        - REPOSITORY_URI=${REPOSITORY_URI}
+        - SERVER_SONAR=${SERVER_SONAR}
+        - ACCESS_TOKEN_SONAR=${ACCESS_TOKEN_SONAR}
+    environment:
+      - SERVER_SONAR=${SERVER_SONAR}
+      - ACCESS_TOKEN_SONAR=${ACCESS_TOKEN_SONAR}
 volumes:
   node_modules:
