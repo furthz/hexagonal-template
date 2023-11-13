@@ -37,6 +37,10 @@ Para configurar el debug es necesario iniciar el docker-compose y agregar la sig
 }
 ```
 
+### Configurar Sonar
+
+Se tiene que reemplazar el valor del Token del repositorio antes de ejecutar el stage de Test para hacer la integración con Sonar
+
 ## Features
 
 - Construido usando Typescript
